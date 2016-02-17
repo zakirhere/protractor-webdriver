@@ -16,7 +16,7 @@ exports.config = {
         'browserName': 'chrome',
         'name': 'SL load test',
     },
-
+    // framework: 'jasmine2',
 
     specs: ['./**/*.spec.js'],
 
@@ -28,12 +28,17 @@ exports.config = {
             baseDirectory: 'reports',
             takeScreenShotsOnlyForFailedSpecs: false,
         }));
-        require('jasmine-reporters');
+        // require('jasmine-reporters');
         // jasmine.getEnv().addReporter(new jasmine.JUnitXmlReporter(
-        //     'C:\temp\test', true, true));
-        jasmine.getEnv().addReporter(new jasmine.JUnitXmlReporter(
-            null, true, true, './reports/gt_')
-        );
+        //     null, true, true, './reports/gt_')
+        // );
+
+        // var jasmineReporters = require('jasmine-reporters');
+        // jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
+        //     consolidateAll: true,
+        //     savePath: 'testresults',
+        //     filePrefix: 'xmloutput'
+        // }));
     },
 
   jasmineNodeOpts: {

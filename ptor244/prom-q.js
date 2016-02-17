@@ -19,7 +19,7 @@ function delayMultiply(mul) {
 // console.log(delayMultiply());
 
 delayMultiply(0).then(function(result) {
-	console.log('Result = ' + result);
+	console.log('Results = ' + result);
 }, function(result) {
 	console.log('Reject = ' + result)
 });
