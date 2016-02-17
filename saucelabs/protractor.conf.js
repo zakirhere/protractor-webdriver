@@ -1,7 +1,8 @@
 /**
  * @author Zakir Sayed
  */
-var HtmlReporter = require('protractor-html-screenshot-reporter');
+// var HtmlReporter = require('protractor-html-screenshot-reporter');
+var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
 
 exports.config = {
     // seleniumAddress: 'http://localhost:4444/wd/hub',
@@ -27,15 +28,25 @@ exports.config = {
 
 
     specs: ['./**/*.spec.js'],
-
+    framework: 'jasmine2',
 
     onPrepare: function() {
+
         browser.ignoreSynchronization = true;
         // Add a screenshot reporter:
-        jasmine.getEnv().addReporter(new HtmlReporter({
-            baseDirectory: 'reports',
-            takeScreenShotsOnlyForFailedSpecs: false,
+        // jasmine.getEnv().addReporter(new HtmlReporter({
+        //     baseDirectory: 'reports',
+        //     takeScreenShotsOnlyForFailedSpecs: false,
+        // }));
+
+        jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
+           savePath: './test/reports/',
+           screenshotsFolder: 'images'
         }));
+
+        afterAll(function(done) {
+            process.nextTick(done);
+        })
     },
 
 
