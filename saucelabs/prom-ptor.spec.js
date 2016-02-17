@@ -1,6 +1,6 @@
 var sl = require('./saucelabs');
 
-describe('when saucelabs is used', function() {
+xdescribe('when saucelabs is used', function() {
 	var i = 0;
 	beforeEach(function() {
 		console.log('Before Each called: ' + i++);
@@ -14,7 +14,7 @@ describe('when saucelabs is used', function() {
 
 	it('delay and print second message', function() {
 		sl.delayAndPrint(2000, 'Second messageA');
-		browser.pause();
+		// browser.pause();
 		sl.delayAndPrint(2000, 'Second messageB');
 	});
 });
